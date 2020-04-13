@@ -1,0 +1,67 @@
+WARNING:fake_useragent:Error occurred during loading data. Trying to use cache server https://fake-useragent.herokuapp.com/browsers/0.1.11
+Traceback (most recent call last):
+  File "C:\Users\utente\AppData\Local\Programs\Python\Python38\lib\urllib\request.py", line 1317, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "C:\Users\utente\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1230, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\utente\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1276, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\utente\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1225, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\utente\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1004, in _send_output
+    self.send(msg)
+  File "C:\Users\utente\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 944, in send
+    self.connect()
+  File "C:\Users\utente\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 915, in connect
+    self.sock = self._create_connection(
+  File "C:\Users\utente\AppData\Local\Programs\Python\Python38\lib\socket.py", line 807, in create_connection
+    raise err
+  File "C:\Users\utente\AppData\Local\Programs\Python\Python38\lib\socket.py", line 796, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\utente\AppData\Local\Programs\Python\Python38\lib\site-packages\fake_useragent\utils.py", line 64, in get
+    with contextlib.closing(urlopen(
+  File "C:\Users\utente\AppData\Local\Programs\Python\Python38\lib\urllib\request.py", line 222, in urlopen
+    return opener.open(url, data, timeout)
+  File "C:\Users\utente\AppData\Local\Programs\Python\Python38\lib\urllib\request.py", line 525, in open
+    response = self._open(req, data)
+  File "C:\Users\utente\AppData\Local\Programs\Python\Python38\lib\urllib\request.py", line 542, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+  File "C:\Users\utente\AppData\Local\Programs\Python\Python38\lib\urllib\request.py", line 502, in _call_chain
+    result = func(*args)
+  File "C:\Users\utente\AppData\Local\Programs\Python\Python38\lib\urllib\request.py", line 1346, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+  File "C:\Users\utente\AppData\Local\Programs\Python\Python38\lib\urllib\request.py", line 1320, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error timed out>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\utente\AppData\Local\Programs\Python\Python38\lib\site-packages\fake_useragent\utils.py", line 164, in load
+    browsers_dict[browser_key] = get_browser_versions(
+  File "C:\Users\utente\AppData\Local\Programs\Python\Python38\lib\site-packages\fake_useragent\utils.py", line 120, in get_browser_versions
+    html = get(
+  File "C:\Users\utente\AppData\Local\Programs\Python\Python38\lib\site-packages\fake_useragent\utils.py", line 84, in get
+    raise FakeUserAgentError('Maximum amount of retries reached')
+fake_useragent.errors.FakeUserAgentError: Maximum amount of retries reached
+ERROR:root:Except on get_username_by_user_id
+Traceback (most recent call last):
+  File "C:\Users\utente\Desktop\popcomm\instabot.py\app\instabot\instabot_py\instabot.py", line 762, in get_username_by_user_id
+    profile = instaloader.Profile.from_id(self.instaload.context, user_id)
+  File "C:\Users\utente\AppData\Local\Programs\Python\Python38\lib\site-packages\instaloader\structures.py", line 409, in from_id
+    rhx_gis=context.root_rhx_gis)['data']['user']
+  File "C:\Users\utente\AppData\Local\Programs\Python\Python38\lib\site-packages\instaloader\instaloadercontext.py", line 507, in root_rhx_gis
+    self._root_rhx_gis = self.get_json('', {})['rhx_gis']
+KeyError: 'rhx_gis'
+ERROR:root:Except on follow!
+Traceback (most recent call last):
+  File "C:\Users\utente\Desktop\popcomm\instabot.py\app\instabot\instabot_py\instabot.py", line 975, in follow
+    insert_username(self, user_id=user_id, username=username)
+  File "C:\Users\utente\Desktop\popcomm\instabot.py\app\instabot\instabot_py\sql_updates.py", line 120, in insert_username
+    "INSERT INTO usernames (username_id, username, last_followed_time) \
+TypeError: can only concatenate str (not "bool") to str
