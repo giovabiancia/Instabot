@@ -7,8 +7,8 @@ from random import randrange
 
 bot = InstaBot(
     # Enter username (lowercase). Do not enter email!
-    login="bplanner_it",
-    password="bplanner23",
+    login="",
+    password="",
     like_per_day=randrange(50, 100),
     comments_per_day=0,
     tag_list=["frantoio", "tuscany", "oil", "olio"],
